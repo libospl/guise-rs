@@ -127,7 +127,7 @@ std::map<dlib::rectangle, dlib::rectangle> Guise::compare_images(std::string fil
 }
 
 // Compare two rectangles.
-bool Guise::compare_face_rectangles(std::pair<dlib::rectangle, dlib::rectangle> pair, std::string file_one, std::string file_two)
+bool Guise::compare_face_rectangles_files(std::pair<dlib::rectangle, dlib::rectangle> pair, std::string file_one, std::string file_two)
 {
     dlib::matrix<dlib::rgb_pixel> img;
     load_image(img, file_one);

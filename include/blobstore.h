@@ -67,7 +67,7 @@ namespace guise
         ~Guise(){};
 
         std::map<dlib::rectangle, dlib::rectangle> compare_images(std::string file_one, std::string file_two);
-        bool compare_face_rectangles(std::pair<dlib::rectangle, dlib::rectangle> pair, std::string file_one, std::string file_two);
+        bool compare_face_rectangles_files(std::pair<dlib::rectangle, dlib::rectangle> pair, std::string file_one, std::string file_two);
 
     private:
         bool compare_face_rectangles(std::pair<dlib::rectangle, dlib::rectangle> pair, dlib::matrix<dlib::rgb_pixel> img_one, dlib::matrix<dlib::rgb_pixel> img_two);

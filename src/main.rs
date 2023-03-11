@@ -1,26 +1,12 @@
-#[cxx::bridge(namespace = "org::blobstore")]
+#[cxx::bridge(namespace = "org::guise")]
 mod ffi {
-    // Shared structs with fields visible to both languages.
-    struct BlobMetadata {
-        size: usize,
-        tags: Vec<String>,
-    }
-
-    // Rust types and signatures exposed to C++.
-    extern "Rust" {
-        type MultiBuf;
-
-        fn next_chunk(buf: &mut MultiBuf) -> &[u8];
-    }
-
     // C++ types and signatures exposed to Rust.
     unsafe extern "C++" {
         include!("demo/include/blobstore.h");
 
-        type BlobstoreClient;
+        type Guise;
 
-        fn new_blobstore_client() -> UniquePtr<BlobstoreClient>;
-        fn put(&self, parts: &mut MultiBuf) -> u64;
+        fn compare_face_rectangles(&self, parts: &mut MultiBuf) -> u64;
         fn tag(&self, blobid: u64, tag: &str);
         fn metadata(&self, blobid: u64) -> BlobMetadata;
     }
