@@ -1,11 +1,9 @@
 [package]
-name = "demo"
-version = "0.0.0"
-authors = ["David Tolnay <dtolnay@gmail.com>"]
-description = "Toy project from https://github.com/dtolnay/cxx"
-edition = "2018"
-license = "MIT OR Apache-2.0"
-publish = false
+name = "guise-rs"
+version = "0.1.0"
+authors = ["Alan Beveridge <adgbeveridge@proton.me>"]
+description = "Compare faces across images"
+
 repository = "https://github.com/dtolnay/cxx"
 
 [dependencies]
