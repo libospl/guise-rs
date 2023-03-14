@@ -1,14 +1,14 @@
+use cxx::{CxxString, CxxVector};
+
 #[cxx::bridge(namespace = "org::guise")]
 mod ffi {
     // C++ types and signatures exposed to Rust.
     unsafe extern "C++" {
-        include!("demo/include/blobstore.h");
+        include!("guise-rs/include/blobstore.h");
 
         type Guise;
 
-        fn compare_face_rectangles(&self, parts: &mut MultiBuf) -> u64;
-        fn tag(&self, blobid: u64, tag: &str);
-        fn metadata(&self, blobid: u64) -> BlobMetadata;
+        fn compare_images(&self, file_one: String, file_two: String, f: &CxxVector<CxxString>);
     }
 }
 
